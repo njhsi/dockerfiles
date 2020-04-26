@@ -7,7 +7,7 @@ LABEL		CMDRUN="docker run njhsi/lede-buildroot"
 
 MAINTAINER	njhsi
 
-ENV DEBIAN_MIRROR    http://mirrors.163.com/debian
+ENV DEBIAN_MIRROR    http://mirrors.tuna.tsinghua.edu.cn/debian/
 ENV DEBIAN_SECURITY  http://security.debian.org/
 
 RUN echo "deb $DEBIAN_MIRROR stable main contrib" > /etc/apt/sources.list
@@ -18,9 +18,9 @@ RUN echo "deb $DEBIAN_MIRROR stable-updates main contrib" >> \
 
 # gettext for envsubst
 RUN		apt-get update && \
-			apt-get install -yq git-core build-essential libssl-dev libncurses5-dev unzip gawk \
-			zlib1g-dev flex gettext wget subversion file python2.7-dev automake bison patchelf findutils \
-			sudo squashfs-tools && \
+			apt-get install -yq git-core build-essential libssl-dev libncurses5-dev unzip gawk time bc \
+			zlib1g-dev flex gettext wget subversion file python-pip python2.7-dev python3-dev automake bison patchelf findutils rsync \
+			sudo squashfs-tools emacs-nox libglib2.0-dev && \
 			apt-get clean 
 
 RUN adduser --disabled-password --gecos '' --shell /bin/bash --home /lede buildman

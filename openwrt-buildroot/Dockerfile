@@ -10,7 +10,7 @@ MAINTAINER	njhsi
 # gettext for envsubst
 RUN		apt-get update && \
 			apt-get install -yq git-core build-essential libssl-dev libncurses5-dev unzip gawk \
-			zlib1g-dev flex gettext wget subversion file python2.7-dev automake bison patchelf findutils \
+			zlib1g-dev flex gettext wget subversion file python2.7-dev automake bison patchelf findutils libglib2.0-dev \
 			sudo && \
 			apt-get clean 
 
