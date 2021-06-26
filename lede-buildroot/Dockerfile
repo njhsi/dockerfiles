@@ -7,8 +7,8 @@ LABEL		CMDRUN="docker run njhsi/lede-buildroot"
 
 MAINTAINER	njhsi
 
-ENV DEBIAN_MIRROR    http://mirrors.tuna.tsinghua.edu.cn/debian/
-ENV DEBIAN_SECURITY  http://mirrors.tuna.tsinghua.edu.cn/debian-security/
+ENV DEBIAN_MIRROR    http://chinanet.mirrors.ustc.edu.cn/debian
+ENV DEBIAN_SECURITY  http://chinanet.mirrors.ustc.edu.cn/debian-security/
 
 RUN echo "deb $DEBIAN_MIRROR stable main contrib" > /etc/apt/sources.list
 RUN echo "deb $DEBIAN_SECURITY stable/updates main contrib" >> /etc/apt/sources.list
@@ -35,10 +35,11 @@ RUN	apt-get install -yq \
 			git-core build-essential libssl-dev libncurses5-dev unzip gawk time bc \
 			zlib1g-dev flex gettext wget subversion file python-pip python3-dev automake bison patchelf findutils rsync \
 			sudo squashfs-tools emacs-nox libglib2.0-dev \
+			less openssh-client file \
             --no-install-recommends 
 
 #1 : coreelec
-RUN apt-get install -yq \
+#RUN apt-get install -yq \
     wget bash bc gcc sed patch patchutils tar bzip2 gzip perl gawk gperf zip unzip diffutils texinfo lzop python3 python \
     g++ xfonts-utils xfonts-utils xfonts-utils xsltproc default-jre-headless \
     libc6-dev libncurses5-dev \
