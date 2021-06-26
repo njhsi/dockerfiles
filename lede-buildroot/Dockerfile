@@ -40,15 +40,15 @@ RUN	apt-get install -yq \
 
 #1 : coreelec
 #RUN apt-get install -yq \
-    wget bash bc gcc sed patch patchutils tar bzip2 gzip perl gawk gperf zip unzip diffutils texinfo lzop python3 python \
-    g++ xfonts-utils xfonts-utils xfonts-utils xsltproc default-jre-headless \
-    libc6-dev libncurses5-dev \
-    u-boot-tools \
-    xz-utils make file libxml-parser-perl \
-    libjson-perl \
-    golang-go \
-    git-core openssh-client \
-    --no-install-recommends
+#    wget bash bc gcc sed patch patchutils tar bzip2 gzip perl gawk gperf zip unzip diffutils texinfo lzop python3 python \
+#    g++ xfonts-utils xfonts-utils xfonts-utils xsltproc default-jre-headless \
+#    libc6-dev libncurses5-dev \
+#    u-boot-tools \
+#    xz-utils make file libxml-parser-perl \
+#    libjson-perl \
+#    golang-go \
+#    git-core openssh-client \
+#    --no-install-recommends
 
 RUN  apt-get clean && rm -rf /var/lib/apt/lists/*
 
